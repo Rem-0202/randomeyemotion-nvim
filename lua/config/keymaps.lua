@@ -63,6 +63,8 @@ map("n", "<F11>", "<Cmd>DapStepInto<CR>", { desc = "Step Into" })
 map("n", "<F12>", "<Cmd>DapStepOut<CR>", { desc = "Step Out" })
 
 -- LSP and QF
+
+map("n", "grd", vim.lsp.buf.definition, { silent = true }, { desc = "Goes to the definition" })
 map("n", "<leader>h", vim.lsp.buf.hover, { silent = true }, { desc = "Show help" })
 map("n", "<leader>rn", vim.lsp.buf.rename, { silent = true }, { desc = "Renames a symbol" })
 map("n", "<leader>tr", "<Cmd>Trouble<CR>", { silent = true }, { desc = "Show diagnostics" })
