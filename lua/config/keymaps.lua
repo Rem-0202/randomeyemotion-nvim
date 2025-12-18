@@ -62,6 +62,9 @@ map("n", "<F10>", "<Cmd>DapStepOver<CR>", { desc = "Step Over" })
 map("n", "<F11>", "<Cmd>DapStepInto<CR>", { desc = "Step Into" })
 map("n", "<F12>", "<Cmd>DapStepOut<CR>", { desc = "Step Out" })
 
+-- Make
+map("n", "<leader>m", "<Cmd>MakeitOpen<CR>", { desc = "Step Out" })
+
 -- LSP and QF
 
 map("n", "grd", vim.lsp.buf.definition, { silent = true }, { desc = "Goes to the definition" })

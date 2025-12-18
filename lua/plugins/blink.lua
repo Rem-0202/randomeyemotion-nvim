@@ -6,8 +6,12 @@ return {
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = "default",
-			["<Up>"] = { "select_prev", "fallback" },
-			["<Down>"] = { "select_next", "fallback" },
+			["<C-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+			["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
+			["<Esc>"] = { "hide", "fallback" },
+			["<PageUp>"] = { "scroll_documentation_up", "fallback" },
+			["<PageDown>"] = { "scroll_documentation_down", "fallback" },
 		},
 
 		appearance = {
@@ -22,9 +26,9 @@ return {
 		fuzzy = { implementation = "prefer_rust" },
 	},
 	opts_extend = { "sources.default" },
-	config = function()
+	config = function(_, opts)
 		local blink = require("blink.cmp")
-		blink.setup()
+		blink.setup(opts)
 
 		-- Apply blink completion capabilities to all servers
 		local caps = blink.get_lsp_capabilities()
