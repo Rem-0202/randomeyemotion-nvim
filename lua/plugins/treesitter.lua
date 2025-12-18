@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "master",
 	event = { "BufReadPost", "BufNewFile" },
 	auto_install = { enable = true },
 	highlight = { enable = true },
