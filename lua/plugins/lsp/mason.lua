@@ -10,7 +10,7 @@ return {
 
 			-- Optional global default config for all servers
 			vim.lsp.config("*", {
-				root_markers = { ".git" },
+				root_markers = { ".git", "src", "Makefile" },
 				capabilities = vim.lsp.protocol.make_client_capabilities(),
 			})
 		end,
