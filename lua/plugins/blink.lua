@@ -1,6 +1,5 @@
 return {
 	"saghen/blink.cmp",
-
 	version = "1.*",
 	opts = {
 		-- See :h blink-cmp-config-keymap for defining your own keymap
@@ -20,10 +19,10 @@ return {
 
 		-- (Default) Only show the documentation popup when manually triggered
 		completion = {
-			documentation = { auto_show = false },
+			documentation = { auto_show = true },
 			list = {
 				selection = {
-					preselect = false,
+					preselect = true,
 					auto_insert = false,
 				},
 			},
