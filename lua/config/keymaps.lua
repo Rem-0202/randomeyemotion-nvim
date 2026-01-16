@@ -47,6 +47,14 @@ map("v", "<leader>d", "d", { silent = true })
 map("n", "<PageDown>", "<C-d>", { silent = true })
 map("n", "<PageUp>", "<C-u>", { silent = true })
 
+-- Movement
+map("n", "j", function()
+	return vim.v.count == 0 and "gj" or "j"
+end, { expr = true })
+
+map("n", "k", function()
+	return vim.v.count == 0 and "gk" or "k"
+end, { expr = true })
 -- Tabs
 map("n", "<M-l>", "<cmd>BufferLineCycleNext<CR>", { silent = true }, { desc = "Next buffer" })
 map("n", "<M-h>", "<cmd>BufferLineCyclePrev<CR>", { silent = true }, { desc = "Previous buffer" })

@@ -38,9 +38,15 @@ opt.foldlevel = 99
 opt.laststatus = 3
 
 vim.diagnostic.config({
-	virtual_lines = { current_line = true, severity = vim.diagnostic.severity.ERROR },
-	underline = true,
+	virtual_text = false,
+	virtual_lines = false,
+	underline = true, -- optional
 	update_in_insert = false,
+	float = {
+		border = "rounded",
+		source = "if_many",
+		severity_sort = true,
+	},
 })
 
 vim.api.nvim_create_autocmd("FileType", {
