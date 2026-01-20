@@ -1,11 +1,12 @@
 return {
 	"saghen/blink.cmp",
 	version = "1.*",
+	dependencies = { "L3MON4D3/LuaSnip", version = "v2.*" },
 	opts = {
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = "default",
-			["<C-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+			["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
 			["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
 			["<Esc>"] = { "hide", "fallback" },
