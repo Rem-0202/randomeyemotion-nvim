@@ -13,7 +13,7 @@ map("i", "<C-k>", "<Esc><C-w>k", { desc = "Move to above split" })
 map("i", "<C-l>", "<Esc><C-w>l", { desc = "Move to right split" })
 
 -- Clear search highlight
-map("n", "<Leader><CR>", "<cmd>noh<CR>", { silent = true })
+map("n", "<Leader><CR>", "<cmd>noh<CR>", { silent = true }, {desc = "Clear search highlight"})
 
 -- FZF / Telescope shortcuts
 map("n", "<leader>f", "<cmd>Telescope find_files theme=dropdown<CR>", { silent = true })
@@ -63,15 +63,16 @@ map("i", "<M-h>", "<ESC><cmd>bp<CR>", { silent = true }, { desc = "Previous buff
 map("n", "<leader><C-w>", "<cmd>bd<CR>", { silent = true }, { desc = "Close buffer" })
 
 -- Plugins
-map("n", "<F5>", "<Cmd>DapContinue<CR>", { desc = "Start/Continue Debugging" })
-map("n", "<leader>b", "<Cmd>DapToggleBreakpoint<CR>", { desc = "Toggle Breakpoint" })
-map("n", "<F8>", "<Cmd>DapTerminate<CR>", { desc = "Stop Debugging" })
-map("n", "<F10>", "<Cmd>DapStepOver<CR>", { desc = "Step Over" })
-map("n", "<F11>", "<Cmd>DapStepInto<CR>", { desc = "Step Into" })
-map("n", "<F12>", "<Cmd>DapStepOut<CR>", { desc = "Step Out" })
+map({ "n", "v", "i" }, "<F5>", function()
+	require("knap").toggle_autopreviewing()
+end, { desc = "Knap autopreview" })
+
+map({ "n", "v", "i" }, "<F6>", function()
+	require("knap").close_viewer()
+end, { desc = "Close preview" })
 
 -- Make
-map("n", "<leader>m", "<Cmd>MakeitOpen<CR>", { desc = "Step Out" })
+map("n", "<leader>m", "<Cmd>MakeitOpen<CR>", { desc = "Run Make" })
 
 -- LSP and QF
 
@@ -86,7 +87,6 @@ map("n", "<leader>df", function()
 	vim.diagnostic.open_float(nil, { focus = false })
 end, { desc = "Open diagnostic float" })
 
-map("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { silent = true }, { desc = "Open Markdown Preview" })
 map("n", "<leader>a", "", {
 	noremap = true,
 	silent = true,
