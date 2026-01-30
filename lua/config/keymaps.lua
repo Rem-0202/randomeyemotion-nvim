@@ -13,24 +13,24 @@ map("i", "<C-k>", "<Esc><C-w>k", { desc = "Move to above split" })
 map("i", "<C-l>", "<Esc><C-w>l", { desc = "Move to right split" })
 
 -- Clear search highlight
-map("n", "<Leader><CR>", "<cmd>noh<CR>", { silent = true }, {desc = "Clear search highlight"})
+map("n", "<Leader><CR>", "<cmd>noh<CR>", { silent = true }, { desc = "Clear search highlight" })
 
 -- FZF / Telescope shortcuts
-map("n", "<leader>f", "<cmd>Telescope find_files theme=dropdown<CR>", { silent = true })
-map("n", "<leader>lg", "<cmd>Telescope live_grep theme=dropdown<CR>", { silent = true })
-map("n", "<leader>l", "<cmd>Telescope current_buffer_fuzzy_find theme=dropdown<CR>", { silent = true })
+map("n", "<leader>f", "<cmd>Telescope find_files theme=dropdown<CR>", { silent = true }, { desc = "Pick files" })
+map("n", "<leader>lg", "<cmd>Telescope live_grep theme=dropdown<CR>", { silent = true }, { desc = "Live grep" })
+map("n", "<leader>ls", "<cmd>Telescope current_buffer_fuzzy_find theme=dropdown<CR>", { silent = true }, { desc = "Line search" })
 
 -- File tree
-map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>")
+map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>", { silent = true}, { desc = "Toggle file tree" })
 
 -- Basic file ops
-map("n", "<leader>w", "<cmd>w<CR>", { silent = true })
-map("n", "<leader>q", "<cmd>q<CR>", { silent = true })
-map("n", "<leader>Q", "<cmd>q!<CR>", { silent = true })
+map("n", "<leader>w", "<cmd>w<CR>", { silent = true }, { desc = "Save file" })
+map("n", "<leader>q", "<cmd>q<CR>", { silent = true }, { desc = "Quit file" })
+map("n", "<leader>Q", "<cmd>q!<CR>", { silent = true }, { desc = "Quit without saving" })
 
 -- Increment / Decrement numbers
-map("n", "<leader>+", "<C-a>", { silent = true })
-map("n", "<leader>_", "<C-x>", { silent = true })
+map("n", "<leader>+", "<C-a>", { silent = true }, { desc = "Increment number" })
+map("n", "<leader>_", "<C-x>", { silent = true }, { desc = "Decrement number" })
 
 -- Prevent delete from yanking
 map("n", "d", '"_d', { silent = true })
@@ -40,8 +40,8 @@ map("v", "c", '"_c', { silent = true })
 map("n", "x", '"_x', { silent = true })
 map("v", "x", '"_x', { silent = true })
 
-map("n", "<leader>d", "d", { silent = true })
-map("v", "<leader>d", "d", { silent = true })
+map("n", "<leader>d", "d", { silent = true }, { desc = "Delete with yank" })
+map("v", "<leader>d", "d", { silent = true }, { desc = "Delete with yank" })
 
 -- Scrolling
 map("n", "<PageDown>", "<C-d>", { silent = true })

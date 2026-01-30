@@ -1,4 +1,3 @@
----@diagnostic disable: undefined-global
 return {
 	"stevearc/aerial.nvim",
 	opts = { backend = { "lsp", "treesitter" } },
