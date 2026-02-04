@@ -2,7 +2,7 @@ return {
 	{ -- This plugin
 		"Zeioth/makeit.nvim",
 		cmd = { "MakeitOpen", "MakeitToggleResults", "MakeitRedo" },
-		dependencies = { "stevearc/overseer.nvim" },
+		dependencies = { "stevearc/overseer.nvim", "nvim-telescope/telescope.nvim" },
 		opts = {},
 	},
 	{ -- The task runner we use
