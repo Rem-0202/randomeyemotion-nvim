@@ -13,7 +13,6 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<C-S-k>", "<C-w>+", { desc = "Increase Height" })
 		map("n", "<C-S-j>", "<C-w>-", { desc = "Decrease Height" })
 
-
 		-- Insert mode: splits --
 		map("i", "<C-h>", "<Esc><C-w>h", { desc = "Move to left split" })
 		map("i", "<C-j>", "<Esc><C-w>j", { desc = "Move to below split" })
@@ -73,6 +72,11 @@ vim.api.nvim_create_autocmd("User", {
 			require("knap").close_viewer()
 		end, { desc = "Close preview", ft = { "tex" } })
 
+		-- Markdown --
+		map("n", "<F5>", function()
+			require("render-markdown").toggle()
+		end, { desc = "Toggle RenderMarkdown", ft = { "markdown" } })
+
 		-- Make
 		map("n", "<leader>m", "<Cmd>MakeitOpen<CR>", { desc = "Run Make" })
 
@@ -115,8 +119,8 @@ vim.api.nvim_create_autocmd("User", {
 
 		-- Outline --
 		map("n", "<leader>ol", "<Cmd>Outline<CR>", { silent = true }, { desc = "Toggle Outline" })
-        
-        -- Copilot Chat --
+
+		-- Copilot Chat --
 		map("n", "<leader>ai", "<Cmd>CopilotChatToggle<CR>", { silent = true }, { desc = "Toggle Copilot Chat" })
 	end,
 })
