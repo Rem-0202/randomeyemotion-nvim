@@ -3,13 +3,18 @@ vim.api.nvim_create_autocmd("User", {
 	pattern = "VeryLazy",
 	callback = function()
 		local map = require("snacks").keymap.set
-		-- Normal mode: move between splits --
+		-- Normal mode: splits --
 		map("n", "<C-h>", "<C-w>h", { desc = "Move to left split" })
 		map("n", "<C-j>", "<C-w>j", { desc = "Move to below split" })
 		map("n", "<C-k>", "<C-w>k", { desc = "Move to above split" })
 		map("n", "<C-l>", "<C-w>l", { desc = "Move to right split" })
+		map("n", "<C-S-h>", "<C-w><", { desc = "Increase Width" })
+		map("n", "<C-S-l>", "<C-w>>", { desc = "Decrease Width" })
+		map("n", "<C-S-k>", "<C-w>+", { desc = "Increase Height" })
+		map("n", "<C-S-j>", "<C-w>-", { desc = "Decrease Height" })
 
-		-- Insert mode: move between splits --
+
+		-- Insert mode: splits --
 		map("i", "<C-h>", "<Esc><C-w>h", { desc = "Move to left split" })
 		map("i", "<C-j>", "<Esc><C-w>j", { desc = "Move to below split" })
 		map("i", "<C-k>", "<Esc><C-w>k", { desc = "Move to above split" })
