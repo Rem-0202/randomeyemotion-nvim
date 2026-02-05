@@ -110,5 +110,8 @@ vim.api.nvim_create_autocmd("User", {
 
 		-- Outline --
 		map("n", "<leader>ol", "<Cmd>Outline<CR>", { silent = true }, { desc = "Toggle Outline" })
+        
+        -- Copilot Chat --
+		map("n", "<leader>ai", "<Cmd>CopilotChatToggle<CR>", { silent = true }, { desc = "Toggle Copilot Chat" })
 	end,
 })
