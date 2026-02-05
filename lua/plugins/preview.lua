@@ -1,6 +1,6 @@
 return {
-	"frabjous/knap",
-    checker = {enabled = "false"},
+	"Rem-0202/knap-verbose-option",
+	checker = { enabled = "false" },
 	config = function()
 		local gknapsettings = {
 			textopdf = 'pdflatex -jobname "$(basename -s .pdf %outputfile%)" -halt-on-error',
