@@ -9,7 +9,7 @@ return {
 				show_tab_indicators = false,
 				show_close_icon = false,
 				show_buffer_close_icons = true,
-				separator_style = "slant",
+				separator_style = "slope",
 				always_show_bufferline = false,
 				themable = true,
 				persist_buffer_sort = true,
