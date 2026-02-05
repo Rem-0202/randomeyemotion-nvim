@@ -95,7 +95,7 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<leader>cn", "<Cmd>cn<CR>", { silent = true }, { desc = "Next quick fix list item" })
 		map("n", "<leader>cp", "<Cmd>cp<CR>", { silent = true }, { desc = "Previous quick fix list item" })
 		map("n", "<leader>cq", "<Cmd>cclose<CR>", { silent = true }, { desc = "Close quick fix list" })
-		map("n", "q", "<Cmd>q<CR>", { silent = true }, { desc = "Close quick fix list", ft = { "qf" } })
+		map("n", "q", "<Cmd>cclose<CR>", { silent = true }, { ft = { "qf" }, desc = "Close quick fix list" })
 
 		-- Picker --
 		map("n", "<leader>pp", "<Cmd>lua Snacks.picker()<CR>", { silent = true }, { desc = "Open picker" })
