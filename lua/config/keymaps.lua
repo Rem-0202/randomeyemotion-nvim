@@ -78,7 +78,7 @@ vim.api.nvim_create_autocmd("User", {
 		end, { desc = "Toggle RenderMarkdown", ft = { "markdown" } })
 
 		-- Make
-		map("n", "<leader>m", "<Cmd>MakeitOpen<CR>", { desc = "Run Make" })
+		map("n", "<F5>", "<Cmd>MakeitOpen<CR>", { desc = "Run Make" })
 
 		-- LSP --
 
@@ -86,7 +86,6 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<leader>h", vim.lsp.buf.hover, { silent = true }, { desc = "Show help" })
 		map("n", "<leader>rn", vim.lsp.buf.rename, { silent = true }, { desc = "Renames a symbol" })
 		map("n", "<leader>fm", vim.lsp.buf.format, { silent = true }, { desc = "Format file" })
-		map("n", "<leader>tr", "<Cmd>Trouble<CR>", { silent = true }, { desc = "Show diagnostics" })
 		map("n", "<leader>df", function()
 			vim.diagnostic.open_float(nil, { focus = false })
 		end, { desc = "Open diagnostic float" })
