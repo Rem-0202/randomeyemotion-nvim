@@ -1,9 +1,16 @@
 return {
 	"folke/snacks.nvim",
+	dependencies = {
+		"folke/persistence.nvim",
+		event = "BufReadPre",
+        config = function()
+            require("persistence").setup()
+        end,
+	},
 	---@type snacks.Config
 	opts = {
 		bigfile = { enabled = false },
-		dashboard = { enabled = true },
+		dashboard = {},
 		explorer = { enabled = false },
 		indent = { enabled = false },
 		input = { enabled = false },
