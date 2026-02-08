@@ -121,5 +121,9 @@ vim.api.nvim_create_autocmd("User", {
 
 		-- Copilot Chat --
 		map("n", "<leader>ai", "<Cmd>CopilotChatToggle<CR>", { silent = true }, { desc = "Toggle Copilot Chat" })
+
+		-- Terminal --
+		map("n", "<leader>t", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Toggle Snacks Terminal" })
+		map("t", "<C-q>", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Escape terminal" })
 	end,
 })
