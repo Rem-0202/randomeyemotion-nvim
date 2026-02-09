@@ -21,4 +21,12 @@ return {
 		"sainnhe/gruvbox-material",
 		name = "Gruvbox Material",
 	},
+	{
+		"sainnhe/everforest",
+		name = "Everforest",
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		name = "Kanagawa",
+	},
 }

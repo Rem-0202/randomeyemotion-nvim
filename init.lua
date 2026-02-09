@@ -6,4 +6,10 @@ vim.opt.background = "light"
 vim.g.gruvbox_material_background = "soft"
 vim.g.gruvbox_material_foreground = "original"
 vim.g.gruvbox_material_better_performance = 1
+
+vim.opt.background = "light"
+vim.g.everforest_background = "soft"
+vim.g.everforest_foreground = "original"
+vim.g.everforest_better_performance = 1
+
 vim.cmd("colorscheme gruvbox-material")
