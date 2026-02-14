@@ -1,6 +1,5 @@
 return {
 	"lukas-reineke/indent-blankline.nvim",
-    dependencies = {"https://gitlab.com/HiPhish/rainbow-delimiters.nvim"},
 	config = function()
 		local highlight = {
 			"RainbowYellow",
