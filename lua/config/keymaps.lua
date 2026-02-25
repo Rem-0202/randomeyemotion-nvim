@@ -99,8 +99,9 @@ vim.api.nvim_create_autocmd("User", {
 		-- Picker --
 		map("n", "<leader>pp", "<Cmd>lua Snacks.picker()<CR>", { silent = true }, { desc = "Open picker" })
 		map("n", "<leader>pl", "<Cmd>lua Snacks.picker.lines()<CR>", { silent = true }, { desc = "Lines search" })
-		map("n", "<leader>pf", "<Cmd>lua Snacks.picker.files()<CR>", { silent = true }, { desc = "Files Search" })
+		map("n", "<leader>pf", "<Cmd>lua Snacks.picker.files()<CR>", { silent = true }, { desc = "Files Searc" })
 		map("n", "<leader>pg", "<Cmd>lua Snacks.picker.grep()<CR>", { silent = true }, { desc = "Live Grep" })
+		map("n", "<leader>pd", "<Cmd>lua Snacks.picker.diagnostics()<CR>", { silent = true }, { desc = "Live Grep" })
 		map(
 			"n",
 			"<leader>pb",
@@ -118,9 +119,6 @@ vim.api.nvim_create_autocmd("User", {
 
 		-- Outline --
 		map("n", "<leader>ol", "<Cmd>Outline<CR>", { silent = true }, { desc = "Toggle Outline" })
-
-		-- Copilot Chat --
-		map("n", "<leader>ai", "<Cmd>CopilotChatToggle<CR>", { silent = true }, { desc = "Toggle Copilot Chat" })
 
 		-- Terminal --
 		map("n", "<leader>t", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Toggle Snacks Terminal" })
