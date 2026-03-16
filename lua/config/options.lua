@@ -49,3 +49,7 @@ vim.diagnostic.config({
 		severity_sort = true,
 	},
 })
+
+vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
+	callback = vim.lsp.codelens.refresh,
+})
