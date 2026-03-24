@@ -50,6 +50,6 @@ vim.diagnostic.config({
 	},
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "TextChanged", "LspAttach" }, {
 	callback = vim.lsp.codelens.refresh,
 })
