@@ -37,6 +37,7 @@ opt.foldmethod = "manual"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.foldlevel = 99
 opt.laststatus = 3
+opt.undofile = true
 
 vim.diagnostic.config({
 	virtual_text = false,
@@ -48,6 +49,12 @@ vim.diagnostic.config({
 		source = "if_many",
 		severity_sort = true,
 	},
+})
+
+vim.api.nvim_create_autocmd({"BufEnter"}, {
+    callback = function()
+        vim.cmd.packadd("nvim.undotree")
+    end,
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "TextChanged", "LspAttach" }, {

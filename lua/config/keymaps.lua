@@ -126,5 +126,8 @@ vim.api.nvim_create_autocmd("User", {
 		-- Terminal --
 		map("n", "<leader>t", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Toggle Snacks Terminal" })
 		map("t", "<C-q>", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Escape terminal" })
+
+        -- Undotree --
+		map("n", "<leader>u", "<Cmd>Undotree<CR>", { silent = true }, { desc = "Undotree" })
 	end,
 })
