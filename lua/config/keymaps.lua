@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<Leader><CR>", "<cmd>noh<CR>", { silent = true }, { desc = "Clear search highlight" })
 
 		-- File tree --
-		map("n", "<leader>n", "<cmd>NvimTreeToggle<CR>", { silent = true }, { desc = "Toggle file tree" })
+		map("n", "<leader>n", "<cmd>lua require('oil').toggle_float()<CR>", { silent = true }, { desc = "Toggle file tree" })
 
 		-- Basic file ops --
 		map("n", "<leader>w", "<cmd>w<CR>", { silent = true }, { desc = "Save file" })
