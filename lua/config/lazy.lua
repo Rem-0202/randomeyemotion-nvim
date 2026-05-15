@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load every plugin config file in lua/plugins
-require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp" } }, {
+require("lazy").setup({ { import = "plugins" }, }, {
     checker = {
         enabled = true,
         notify = false,
