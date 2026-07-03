@@ -23,7 +23,13 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<Leader><CR>", "<cmd>noh<CR>", { silent = true }, { desc = "Clear search highlight" })
 
 		-- File tree --
-		map("n", "<leader>n", "<cmd>lua require('oil').toggle_float()<CR>", { silent = true }, { desc = "Toggle file tree" })
+		map(
+			"n",
+			"<leader>n",
+			"<cmd>lua require('oil').toggle_float()<CR>",
+			{ silent = true },
+			{ desc = "Toggle file tree" }
+		)
 
 		-- Basic file ops --
 		map("n", "<leader>w", "<cmd>w<CR>", { silent = true }, { desc = "Save file" })
@@ -65,23 +71,22 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<leader><C-w>", "<cmd>bd<CR>", { silent = true }, { desc = "Close buffer" })
 
 		-- Latex --
-		map({ "n", "v", "i" }, "<F5>", function()
+		map({ "n", "v", "i" }, "<leader>m", function()
 			require("knap").toggle_autopreviewing()
 		end, { desc = "Knap autopreview", ft = { "tex" } })
-		map({ "n", "v", "i" }, "<F6>", function()
+		map({ "n", "v", "i" }, "<leader>M", function()
 			require("knap").close_viewer()
 		end, { desc = "Close preview", ft = { "tex" } })
 
 		-- Markdown --
-		map("n", "<F5>", function()
+		map("n", "<leader>m", function()
 			require("render-markdown").toggle()
 		end, { desc = "Toggle RenderMarkdown", ft = { "markdown" } })
 
 		-- Make
-		map("n", "<F5>", "<Cmd>MakeitOpen<CR>", { desc = "Run Make" })
+		map("n", "<leader>m", "<Cmd>MakeitOpen<CR>", { desc = "Run Make" })
 
 		-- LSP --
-
 		map("n", "grd", vim.lsp.buf.definition, { silent = true }, { desc = "Goes to the definition" })
 		map("n", "<leader>h", vim.lsp.buf.hover, { silent = true }, { desc = "Show help" })
 		map("n", "<leader>rn", vim.lsp.buf.rename, { silent = true }, { desc = "Renames a symbol" })
@@ -92,6 +97,27 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<leader>df", function()
 			vim.diagnostic.open_float(nil, { focus = false })
 		end, { desc = "Open diagnostic float" })
+
+		-- DAP --
+		map("n", "<leader>b", "<Cmd>DapToggleBreakpoint<CR>", { silent = true }, { desc = "Breakpoint" })
+		map("n", "<F5>", function()
+			require("dap").continue()
+		end, { silent = true }, { desc = "DAP Continue" })
+		map("n", "<F9>", function()
+			require("dap").step_into()
+		end, { silent = true }, { desc = "DAP step into" })
+		map("n", "<F10>", function()
+			require("dap").step_out()
+		end, { silent = true }, { desc = "DAP step out" })
+		map("n", "<F11>", function()
+			require("dap").step_over()
+		end, { silent = true }, { desc = "DAP step over" })
+		map("n", "<F6>", function()
+			require("dap").pause()
+		end, { silent = true }, { desc = "DAP pause" })
+		map("n", "<F12>", function()
+			require("dap").terminate()
+		end, { silent = true }, { desc = "DAP terminate" })
 
 		-- Quickfix list --
 		map("n", "<leader>cn", "<Cmd>cn<CR>", { silent = true }, { desc = "Next quick fix list item" })
@@ -127,7 +153,7 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<leader>t", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Toggle Snacks Terminal" })
 		map("t", "<C-q>", "<Cmd>lua Snacks.terminal()<CR>", { silent = true }, { desc = "Escape terminal" })
 
-        -- Undotree --
+		-- Undotree --
 		map("n", "<leader>u", "<Cmd>Undotree<CR>", { silent = true }, { desc = "Undotree" })
 	end,
 })

@@ -51,14 +51,17 @@ vim.diagnostic.config({
 	},
 })
 
-vim.api.nvim_create_autocmd({"BufEnter"}, {
-    callback = function()
-        vim.cmd.packadd("nvim.undotree")
-    end,
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+	callback = function()
+		vim.cmd.packadd("nvim.undotree")
+	end,
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "TextChanged", "LspAttach" }, {
 	callback = function()
-        vim.lsp.codelens.enable(true)
-    end,
+		vim.lsp.codelens.enable(true)
+	end,
 })
+
+vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+vim.fn.sign_define("DapBreakpoint", { text = "●", texthl = "DiagnosticError", linehl = "", numhl = "" })
