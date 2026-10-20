@@ -13,3 +13,8 @@ vim.g.everforest_foreground = "original"
 vim.g.everforest_better_performance = 1
 
 vim.cmd("colorscheme gruvbox-material")
+vim.lsp.enable({
+    "lua_ls",
+    "clangd",
+    "pyright",
+})

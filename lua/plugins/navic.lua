@@ -1,18 +1,7 @@
 return {
-    -- LSP + Mason
     {
-        "mason-org/mason.nvim",
-        dependencies = {
-            "neovim/nvim-lspconfig",
-            "mason-org/mason-lspconfig.nvim",
-        },
+        "SmiteshP/nvim-navic",
         config = function()
-            require("mason").setup()
-
-            require("mason-lspconfig").setup({
-                automatic_installation = true,
-            })
-
             -- Attach navic (if installed) when an LSP attaches
             vim.api.nvim_create_autocmd("LspAttach", {
                 callback = function(args)
@@ -31,13 +20,5 @@ return {
                 end,
             })
         end,
-    },
-    -- Navic UI (optional)
-    {
-        "SmiteshP/nvim-navic",
-        dependencies = { "neovim/nvim-lspconfig" },
-        opts = {
-            lsp = { auto_attach = true },
-        },
     },
 }
