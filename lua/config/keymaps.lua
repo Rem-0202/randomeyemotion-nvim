@@ -71,10 +71,10 @@ vim.api.nvim_create_autocmd("User", {
 		map("n", "<leader><C-w>", "<cmd>bd<CR>", { silent = true }, { desc = "Close buffer" })
 
 		-- Latex --
-		map({ "n", "v", "i" }, "<leader>m", function()
+		map({ "n", "v" }, "<leader>m", function()
 			require("knap").toggle_autopreviewing()
 		end, { desc = "Knap autopreview", ft = { "tex" } })
-		map({ "n", "v", "i" }, "<leader>M", function()
+		map({ "n", "v" }, "<leader>M", function()
 			require("knap").close_viewer()
 		end, { desc = "Close preview", ft = { "tex" } })
 
